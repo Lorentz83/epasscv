@@ -1,0 +1,69 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{l18n/epasscv-italian}[2012/11/01 epasscv - italian localization]
+
+%% Copyright (C) 2012 Lorenzo Bossi
+%% This file is part of epasscv
+%% For the detail of the license read the file LICENSE that is provided
+%% with this package or download it at
+%% https://github.com/Lorentz83/epasscv
+
+\renewcommand{\cvcurrentlanguageVAR}{it}
+
+%% Languages
+
+\renewcommand{\cvIT}{Italiano}
+\renewcommand{\cvEN}{Inglese}
+
+
+%% personalinfo
+
+\renewcommand{\cvpersonalinfoT}{Informazioni personali}
+\renewcommand{\cvnationalityT}{Nazionalit\`a}
+\renewcommand{\cvdateofbirthT}{Data di nascita}
+\renewcommand{\cvgenderT}{Sesso}
+
+\renewcommand{\cvMale}{Maschile}
+\renewcommand{\cvFemale}{Femminile}
+
+%% position
+
+\renewcommand{\cvpreferredjobT}{Occupazione desiderata}
+\renewcommand{\cvjobappliedT}{Posizione per la quale si concorre}
+\renewcommand{\cvpositionT}{Posizione ricoperta}
+\renewcommand{\cvstudiesappliedT}{Titolo di studio per il quale si concorre}
+\renewcommand{\cvpersonalstatT}{Dichiarazioni personali}
+
+%% occupation
+\renewcommand{\businessOrSectorT}{Attivit\`a o settore}
+
+%% skills and competences
+\renewcommand{\cvmothertongueT}{Lingua madre}
+\renewcommand{\cvotherlanguagesT}{Altre lingue}
+\renewcommand{\cvlanguagesdefinedT}{Come definito da \emph{Common European Framework of Reference for Languages}}
+\renewcommand{\cvlanguagesdefinedURL}{\url{http://europass.cedefop.europa.eu/it/resources/european-language-levels-cefr}}
+
+\renewcommand{\cvUnderstandingT}{Comprensione}
+\renewcommand{\cvSpeakingT}{Parlato}
+\renewcommand{\cvListeningT}{Ascolto}
+\renewcommand{\cvReadingT}{Lettura}
+\renewcommand{\cvInteractionT}{Interazione}
+\renewcommand{\cvProductionT}{Produzione}
+\renewcommand{\cvWritingT}{Scrittura}
+\renewcommand{\cvlanguageslevelsT}{Livelli: 
+A1/A2: utente base 
+-- B1/B2: utente indipendente
+-- C1/C2: utente esperto}
+
+
+%% closing
+
+\renewcommand{\cvclosing}{\vfill
+  \hspace{-\cvtitlewidth}\begin{minipage}{\textwidth + \cvtitlewidth}
+    Autorizzo il trattamento dei dati personali contenuti nel presente
+    curriculum vitae in base art. 13 del D. Lgs. 196/2003.
+    
+    \vspace{1.7em}\hfill\hfill \dotfill
+  \end{minipage}
+}
+
+\endinput

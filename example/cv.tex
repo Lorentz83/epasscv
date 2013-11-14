@@ -1,0 +1,110 @@
+\documentclass[a4paper]{epasscv} % the default language is english
+
+%% you can specify the cv language as class parameter
+% \documentclass[a4paper,italian]{epasscv}
+
+%% or load with the following command, the babel optional parameter
+%% is used to automatically load the babel package
+% \cvloadlanguage[babel]{italian}
+% \cvloadlanguage{english}
+% \usepackage[english]{babel}
+
+\cvname{Santa Claus}
+\cvpicture{\includegraphics[height=3cm]{photo}}
+
+\begin{document}
+
+\begin{personalinfo}
+  \cvaddress{An hidden town in North Pole}
+  \begin{cvphones}
+    \cvhome{+NP 123 456}\hfill
+    \cvmobile{+NP 1234 567}
+    
+    \cvfax{+NP 999 888}\hfill
+    \cvwork{+NP 999 888}
+  \end{cvphones}
+  \begin{cvinstantmessages}
+    \cvskype{santa.claus} \hfill \cvhangout{santaclause@google.np}
+  \end{cvinstantmessages}
+  \cvemail{santaclaus@northpole.np}
+  \begin{cvwebsites}
+    \cvwebsite{http://www.northpole.np}
+    \cvlinkedin{http://www.linkedin.com/in/santaclaus}
+    \cvfacebook{http://www.facebook.com/santaclaus/}
+    \cvgoogleplus{http://plus.google.com/santaclaus/}
+    \cvwordpress{http://www.www.northpole.np/blog/}
+  \end{cvwebsites}
+  \cvgender{\cvMale}\hfill
+  \cvnationality{\cvEN}\\
+  \cvdateofbirth{270-12-25}
+\end{personalinfo}
+
+\begin{cvpreferredjob}
+  \only[en]{Bring gifts to the homes of the good children, preferably
+    the night between December $24^{th}$ and $25^{th}$}%
+  \only[it]{Portare i regali nelle case dei bambini buoni,
+    preferibilmente la notte tra il 24 ed il 25 dicembre}%
+\end{cvpreferredjob}
+
+%% to support localization, a lot of commands accept an optional
+%% parameter to hide their result if the cv is running for another
+%% language
+%
+% \section[en]{You can write a custom section in English}
+% \section[it]{Puoi scrivere una sezione personalizzata in Italiano}
+%
+% \only[en]{and complete with English text}
+% \only[it]{e completarla con testo in italiano}
+
+\section{Work experience}
+
+\begin{timespan}{270-07-01}{} % if a date miss it is replaced with "current"
+  \begin{occupation}{Elves coordinator in Santa's secret village}
+    Research and develop new toys, mainly in wood.
+  \end{occupation}  
+  \begin{company}[http://www.secretvillage.np]
+    Santa's secret village -- North pole
+  \end{company}
+  \businessOrSector{Artisanship}
+\end{timespan}
+
+
+\section{Education and training}
+
+\begin{timespan}{1920-01-01}{1923-01-07}
+  \begin{education}{Master in wooden carving}{ISCED 4}
+    In this master I have learned how to carve wood, mainly to make
+    wooden puppets.
+  \end{education}
+  
+  \begin{institute}[http://www.geppetto.it/]
+    Mr Geppetto store, Firenze -- Italy
+  \end{institute}
+\end{timespan}
+
+\section{Personal skills and~competences}
+
+\cvmothertongue{\cvEN}
+\begin{cvotherlanguages}
+  \cvlanguage{\cvEN}{C1}{C1}{C1}{C1}{C1}
+  \cvlanguage{any other}{C1}{C1}{C1}{C1}{C1}
+\end{cvotherlanguages}
+
+
+\subsection{Driving licence(s)}
+A -- with an especial permit for flying reindeer
+
+\section{Publications}
+
+%% Yes, there is a special command for publications :)
+\publication{Santa Claus and Mr. Geppetto}
+  {How to carve puppets}
+  {North Pole editions, 1883}
+
+
+%% In some country -- like Italy -- it is necessary to end the cv with
+%% a standard closing that openly permit the organization to store and
+%% manage the personal data written on the cv itself.
+\cvclosing
+
+\end{document} 
