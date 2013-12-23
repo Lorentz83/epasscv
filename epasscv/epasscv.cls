@@ -104,7 +104,7 @@
 {}{0pt}{#1}[\titlerule\\]
 \titlespacing{\section}{\cvtitlewidth}{1.5ex plus .1ex minus .2ex}{\cvtitlespace}
 
-\titleformat{\subsection}[leftmargin]{\large\scshape\sffamily\filleft}{}{0pt}{#1}
+\titleformat{\subsection}[leftmargin]{\scshape\sffamily\filleft}{}{0pt}{#1}
 \titlespacing{\subsection}{\cvtitlewidth}{1.5ex plus .1ex minus .2ex}{\cvtitlespace}
 
 \titleformat{\subsubsection}[leftmargin]{\filleft}{}{0pt}{#1}
@@ -280,7 +280,7 @@
 }
 {
 
-\small
+\footnotesize
 \cvlanguageslevelsT
 }
 
