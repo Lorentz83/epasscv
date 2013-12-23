@@ -51,7 +51,7 @@
 \RequirePackage{url}
 \RequirePackage{etoolbox}            % if then else replacement
 \RequirePackage[hidelinks]{hyperref} % provide \texorpdfstring for the date
-\RequirePackage{xparse}              % \NewDocumentEnvironment command
+\RequirePackage{xparse}              % \NewDocumentEnvironment \DeclareDocumentCommand commands
 \RequirePackage{calc}
 
 %%%%%%%%%%%%%%%%%%%%% Support vars and commands %%%%%%%%%%%%%%%%%%%%%
@@ -250,7 +250,7 @@
 \newenvironment{education}[2]{{\large #1} \hfill {\footnotesize #2}\par}{\par}
 \NewDocumentEnvironment{institute}{O{}}{}{\\\cvoptionalUrl{#1}{}{\\}}
 
-\newcommand{\thesis}[2]{Thesis title: ``#1''\\Degree: #2}
+\DeclareDocumentCommand\thesis{mg}{Thesis title:  ``#1''\IfNoValueF{#2}{\\Degree: #2}}
 
 %%%%%%%%%%%%%%%%%%%%% cv skills and competences %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
