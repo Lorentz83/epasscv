@@ -90,7 +90,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%% custom layout %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\RequirePackage[margin=3cm,top=3.5cm,bottom=3.5cm]{geometry}
+\RequirePackage[margin=2cm,top=3cm,bottom=3cm]{geometry}
 
 \RequirePackage[explicit]{titlesec}   %custom titles
 
@@ -100,11 +100,11 @@
 \setlength{\cvtitlespace}{1pc}
 
 \titleformat{\section}[leftmargin]
-{\vspace{.8ex}\large\scshape\sffamily\filleft}
+{\vspace{.8ex}\large\scshape\filleft}
 {}{0pt}{#1}[\titlerule\\]
 \titlespacing{\section}{\cvtitlewidth}{1.5ex plus .1ex minus .2ex}{\cvtitlespace}
 
-\titleformat{\subsection}[leftmargin]{\scshape\sffamily\filleft}{}{0pt}{#1}
+\titleformat{\subsection}[leftmargin]{\scshape\filleft}{}{0pt}{#1}
 \titlespacing{\subsection}{\cvtitlewidth}{1.5ex plus .1ex minus .2ex}{\cvtitlespace}
 
 \titleformat{\subsubsection}[leftmargin]{\filleft}{}{0pt}{#1}
