@@ -34,6 +34,7 @@
 \ProcessOptions\relax
 
 
+\RequirePackage{img/epasscv-theme}
 
 \RequirePackage{l18n/epasscv-english} % default language
 \RequirePackage{l18n/epasscv-\cvfullLanguageVAR} % localized text
@@ -99,15 +100,16 @@
 \newdimen\cvtitlespace
 \setlength{\cvtitlespace}{1pc}
 
+\usepackage{amssymb}
 \titleformat{\section}[leftmargin]
 {\vspace{.8ex}\large\scshape\filleft}
-{}{0pt}{#1}[\titlerule\\]
+{}{0pt}{\color{title}#1}[\color{title}\titlerule\hspace{-1em} $\blacksquare$ \\]
 \titlespacing{\section}{\cvtitlewidth}{1.5ex plus .1ex minus .2ex}{\cvtitlespace}
 
-\titleformat{\subsection}[leftmargin]{\scshape\filleft}{}{0pt}{#1}
+\titleformat{\subsection}[leftmargin]{\scshape\filleft\color{title}}{}{0pt}{\color{title}#1}
 \titlespacing{\subsection}{\cvtitlewidth}{1.5ex plus .1ex minus .2ex}{\cvtitlespace}
 
-\titleformat{\subsubsection}[leftmargin]{\filleft}{}{0pt}{#1}
+\titleformat{\subsubsection}[leftmargin]{\filleft}{}{0pt}{\color{title}#1}
 \titlespacing{\subsubsection}{\cvtitlewidth}{0pt}{\cvtitlespace}
 
 \setlength{\parindent}{0cm} % no indent
@@ -242,12 +244,12 @@
 \myCVOptVar{sector}
 \newenvironment{occupation}[1]{{\large #1}\par}{\par}
 \NewDocumentEnvironment{company}{O{}}{}{\\\cvoptionalUrl{#1}{}{\\}}
-\newcommand{\businessOrSector}[1]{\businessOrSectorT: #1\\}
+\newcommand{\businessOrSector}[1]{\textcolor{text}{\businessOrSectorT:} #1\\}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% cv education %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newenvironment{education}[2]{{\large #1} \hfill {\footnotesize #2}\par}{\par}
+\newenvironment{education}[2]{{\large #1} \hfill {\footnotesize\textcolor{text}{#2}}\par}{\par}
 \NewDocumentEnvironment{institute}{O{}}{}{\\\cvoptionalUrl{#1}{}{\\}}
 
 \DeclareDocumentCommand\thesis{mg}{Thesis title:  ``#1''\IfNoValueF{#2}{\\Degree: #2}}
@@ -281,7 +283,7 @@
 {
 
 \footnotesize
-\cvlanguageslevelsT
+\textcolor{text}{\cvlanguageslevelsT}
 }
 
 \newcommand{\cvlanguage}[6]{%
