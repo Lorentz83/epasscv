@@ -194,13 +194,13 @@
 \newcommand{\cvemail}[1]{\cvemailicon~\url{#1}}
 
 \newenvironment{cvinstantmessages}{\par}{\par}
-\newcommand{\cvexpandimcon}[1]{%
+\newcommand{\cvexpandimicon}[1]{%
   \expandafter\newcommand\csname #1\endcsname[1]{%
-    \csname #1icon\endcsname~\texttt{##1}
+    \csname #1icon\endcsname~\texttt{##1}%
   }%
 }
-\cvexpandimcon{cvhangout}
-\cvexpandimcon{cvskype}
+\cvexpandimicon{cvhangout}
+\cvexpandimicon{cvskype}
 
 \newenvironment{cvwebsites}{\par}{\par}
 \newcommand{\cvexpandwebicon}[1]{%
