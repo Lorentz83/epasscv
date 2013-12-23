@@ -120,7 +120,7 @@
 %\renewcommand{\headrulewidth}{0pt} % no header line
 \fancyfoot{}  %clear
 \fancyfoot[C]{\footnotesize Page \thepage\ of \pageref{LastPage}}
-\fancyhead[L]{Europass}
+\fancyhead[L]{\cveuropassimg}
 \fancyhead[C]{Curriculum Vitae}
 \fancyhead[R]{\cvnameVAR}
 
