@@ -242,7 +242,7 @@
 \myCVOptVar{sector}
 \newenvironment{occupation}[1]{{\large #1}\par}{\par}
 \NewDocumentEnvironment{company}{O{}}{}{\\\cvoptionalUrl{#1}{}{\\}}
-\newcommand{\businessOrSector}[1]{\businessOrSectorT~#1\\}
+\newcommand{\businessOrSector}[1]{\businessOrSectorT: #1\\}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% cv education %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
