@@ -100,10 +100,10 @@
 \newdimen\cvtitlespace
 \setlength{\cvtitlespace}{1pc}
 
-\usepackage{amssymb}
+\RequirePackage{amssymb} %\blacksquare
 \titleformat{\section}[leftmargin]
 {\vspace{.8ex}\large\scshape\filleft}
-{}{0pt}{\color{title}#1}[\color{title}\titlerule\hspace{-1em} $\blacksquare$ \\]
+{}{0pt}{\color{title}#1}[\color{title}\titlerule\hspace{-1em} $\blacksquare$\\]
 \titlespacing{\section}{\cvtitlewidth}{1.5ex plus .1ex minus .2ex}{\cvtitlespace}
 
 \titleformat{\subsection}[leftmargin]{\scshape\filleft\color{title}}{}{0pt}{\color{title}#1}
@@ -165,7 +165,7 @@
 \RequirePackage[\cvfullLanguageVAR]{isodate}
 \newcommand{\printd}[1]{%
 \ifnum\pdfstrcmp{#1}{}=\z@\expandafter\@firstoftwo\else\expandafter\@secondoftwo\fi
-  {Current}{\texorpdfstring{\printdate{#1}}{}}% \texorpdfstring workaround for hyperref
+  {\cvCurrentDate}{\texorpdfstring{\printdate{#1}}{}}% \texorpdfstring workaround for hyperref
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% personal info %%%%%%%%%%%%%%%%%%%%%%%%%%%
