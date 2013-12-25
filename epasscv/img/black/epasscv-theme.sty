@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{img/epasscv-theme}[2012/11/01 epasscv - black and white theme]
+\ProvidesPackage{img/black/epasscv-theme}[2012/11/01 epasscv - black and white theme]
 
 %% Copyright (C) 2012 Lorenzo Bossi
 %% This file is part of epasscv
@@ -7,17 +7,16 @@
 %% with this package or download it at
 %% https://github.com/Lorentz83/epasscv
 
+
 \RequirePackage{marvosym}            % symbols for personalinfo
 \RequirePackage{graphicx}
-
 \RequirePackage{color}
-\definecolor{icon}{RGB}{17,149,202}
-\definecolor{title}{RGB}{14,65,148}
-\definecolor{text}{RGB}{21,147,203}
 
+\newcommand{\cvgeticon}[1]{img/black/#1} %% icons base path
 
-\newcommand{\cviconpath}{colorful} 
-\newcommand{\cvgeticon}[1]{img/\cviconpath/#1}
+\definecolor{icon}{RGB}{0,0,0}
+\definecolor{title}{RGB}{0,0,0}
+\definecolor{text}{RGB}{0,0,0}
 
 \newcommand{\cvaddressicon}{\includegraphics[width=.9em]{\cvgeticon{info/home}}}
 \newcommand{\cvphonehomeicon}{{\color{icon}\Telefon}}

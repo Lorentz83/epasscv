@@ -1,0 +1,37 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{img/blue/epasscv-theme}[2012/11/01 epasscv - black and white theme]
+
+%% Copyright (C) 2012 Lorenzo Bossi
+%% This file is part of epasscv
+%% For the detail of the license read the file LICENSE that is provided
+%% with this package or download it at
+%% https://github.com/Lorentz83/epasscv
+
+
+\RequirePackage{marvosym}            % symbols for personalinfo
+\RequirePackage{graphicx}
+\RequirePackage{color}
+
+\newcommand{\cvgeticon}[1]{img/blue/#1} %% icons base path
+
+\definecolor{icon}{RGB}{17,149,202}
+\definecolor{title}{RGB}{14,65,148}
+\definecolor{text}{RGB}{21,147,203}
+
+\newcommand{\cvaddressicon}{\includegraphics[width=.9em]{\cvgeticon{info/home}}}
+\newcommand{\cvphonehomeicon}{{\color{icon}\Telefon}}
+\newcommand{\cvphonemobileicon}{{\color{icon}\Mobilefone}}
+\newcommand{\cvphoneworkicon}{{\color{icon}\Industry}}
+\newcommand{\cvphonefaxicon}{{\color{icon}\Faxmachine}}
+\newcommand{\cvemailicon}{{\color{icon}\MVAt}}
+
+\newcommand{\cvfacebookicon}{\includegraphics[width=.9em]{\cvgeticon{web/facebook}}}
+\newcommand{\cvgoogleplusicon}{\includegraphics[width=.9em]{\cvgeticon{web/googleplus}}}
+\newcommand{\cvlinkedinicon}{\includegraphics[width=.9em]{\cvgeticon{web/linkedin}}}
+\newcommand{\cvtwittericon}{\includegraphics[width=.9em]{\cvgeticon{web/twitter}}}
+\newcommand{\cvwebsiteicon}{\includegraphics[width=.9em]{\cvgeticon{web/website}}}
+\newcommand{\cvwordpressicon}{\includegraphics[width=.9em]{\cvgeticon{web/wordpress}}}
+
+\newcommand{\cvhangouticon}{\includegraphics[width=.9em]{\cvgeticon{im/hangout}}}
+\newcommand{\cvskypeicon}{\includegraphics[width=.9em]{\cvgeticon{im/skype}}}
+\newcommand{\cveuropassimg}{\includegraphics[width=10em]{\cvgeticon{europass}}}

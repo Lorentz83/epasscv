@@ -7,6 +7,8 @@
 %% with this package or download it at
 %% https://github.com/Lorentz83/epasscv
 
+%% article option
+
 \DeclareOption{10pt}{
   \PassOptionsToClass{\CurrentOption}{article}
 }
@@ -14,27 +16,40 @@
   \PassOptionsToClass{\CurrentOption}{article}
 }
 
+%% l18n options
+
 \newcommand{\cvfullLanguageVAR}{}
 \newcommand{\cvcurrentlanguageVAR}{}
-
 
 \DeclareOption{english}{
   \renewcommand{\cvfullLanguageVAR}{english}
 }
-
 \DeclareOption{italian}{
   \renewcommand{\cvfullLanguageVAR}{italian}
 }
 
 %\cvcurrentlanguage{it} % babel \languagename
 
+%% color option
+\newcommand{\cvtheme}{}
+
+\DeclareOption{blue}{
+  \renewcommand{\cvtheme}{img/blue/epasscv-theme}
+}
+
+\DeclareOption{black}{
+  \renewcommand{\cvtheme}{img/black/epasscv-theme}
+}
+
+%% default options
+
 \ExecuteOptions{english}
+\ExecuteOptions{blue}
 
 
 \ProcessOptions\relax
 
-
-\RequirePackage{img/epasscv-theme}
+\RequirePackage{\cvtheme} % load theme
 
 \RequirePackage{l18n/epasscv-english} % default language
 \RequirePackage{l18n/epasscv-\cvfullLanguageVAR} % localized text
