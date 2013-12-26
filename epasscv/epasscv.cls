@@ -213,7 +213,7 @@
 %%%%%%%%%%%%%%%%%%%%%%% cv work and education %%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newenvironment{timespan}[2]{\subsubsection{\printd{#1} \\ \printd{#2}}}{\par}
+\newenvironment{cvtimespan}[2]{\subsubsection{\printd{#1} \\ \printd{#2}}}{\par}
 
 %%%%%%%%%%%%%%%%%%%%%%%%% cv work experience %%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -333,6 +333,16 @@
 {%
   \ifthenelse{\equal{#1}{\cvcurrentlanguageVAR}}%
   {\end{cvoccupation}}{\endcomment}%
+}
+
+\NewDocumentEnvironment{timespan}{O{\cvcurrentlanguageVAR} m G{}}
+{%
+  \ifthenelse{\equal{#1}{\cvcurrentlanguageVAR}}%
+  {\begin{cvtimespan}{#2}{#3}}{\comment}
+}
+{%
+  \ifthenelse{\equal{#1}{\cvcurrentlanguageVAR}}%
+  {\end{cvtimespan}}{\endcomment}%
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%% date formatting %%%%%%%%%%%%%%%%%%%%%%%%%%
