@@ -145,44 +145,6 @@
 \setlength{\hoffset}{\cvtitlewidth} %make space for the beginning of the title 
 \fancyhfoffset[L]{\cvtitlewidth} % align the header to the title
 
-%%%%%%%%%%%% LOCALIZATION 
-
-\let\DEFsection\section
-\renewcommand{\section}[2][\cvcurrentlanguageVAR]{%
-  \ifthenelse{\equal{#1}{\cvcurrentlanguageVAR}}
-  {\DEFsection{#2}}{}%
-}
-
-\let\DEFsubsection\subsection
-\renewcommand{\subsection}[2][\cvcurrentlanguageVAR]{%
-  \ifthenelse{\equal{#1}{\cvcurrentlanguageVAR}}
-  {\DEFsubsection{#2}}{}%
-}
-
-\let\DEFsubsubsection\subsubsection
-\renewcommand{\subsubsection}[2][\cvcurrentlanguageVAR]{%
-  \ifthenelse{\equal{#1}{\cvcurrentlanguageVAR}}
-  {\DEFsubsubsection{#2}}{}%
-}
-
-\newcommand{\only}[2][\cvcurrentlanguageVAR]{%
-  \ifthenelse{\equal{#1}{\cvcurrentlanguageVAR}}
-  {#2}{}%
-}
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%% date formatting %%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\RequirePackage[\cvfullLanguageVAR]{isodate}
-\newcommand{\printd}[1]{%
-\ifnum\pdfstrcmp{#1}{}=\z@\expandafter\@firstoftwo\else\expandafter\@secondoftwo\fi
-  {\cvCurrentDate}{\texorpdfstring{\printdate{#1}}{}}% \texorpdfstring workaround for hyperref
-}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%% personal info %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -257,17 +219,17 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \myCVOptVar{sector}
-\newenvironment{occupation}[1]{{\large #1}\par}{\par}
+\newenvironment{cvoccupation}[1]{{\large #1}\par}{\par}
 \NewDocumentEnvironment{company}{O{}}{}{\\\cvoptionalUrl{#1}{}{\\}}
 \newcommand{\businessOrSector}[1]{\textcolor{text}{\businessOrSectorT:} #1\\}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% cv education %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newenvironment{education}[2]{{\large #1} \hfill {\footnotesize\textcolor{text}{#2}}\par}{\par}
+\newenvironment{cveducation}[2]{{\large #1} \hfill {\footnotesize\textcolor{text}{#2}}\par}{\par}
 \NewDocumentEnvironment{institute}{O{}}{}{\\\cvoptionalUrl{#1}{}{\\}}
 
-\DeclareDocumentCommand\thesis{mg}{Thesis title:  ``#1''\IfNoValueF{#2}{\\Degree: #2}}
+\DeclareDocumentCommand\thesis{mg}{\cvthesistitle:  ``#1''\IfNoValueF{#2}{\\\cvthesisdegree: #2}}
 
 %%%%%%%%%%%%%%%%%%%%% cv skills and competences %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -309,7 +271,8 @@
 }
 
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% EXTRA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\publication}[3]{%
   #1:\\
@@ -317,4 +280,67 @@
   #3
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% LOCALIZATION %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\let\DEFsection\section
+\renewcommand{\section}[2][\cvcurrentlanguageVAR]{%
+  \ifthenelse{\equal{#1}{\cvcurrentlanguageVAR}}%
+  {\DEFsection{#2}}{}%
+}
+
+\let\DEFsubsection\subsection
+\renewcommand{\subsection}[2][\cvcurrentlanguageVAR]{%
+  \ifthenelse{\equal{#1}{\cvcurrentlanguageVAR}}%
+  {\DEFsubsection{#2}}{}%
+}
+
+\let\DEFsubsubsection\subsubsection
+\renewcommand{\subsubsection}[2][\cvcurrentlanguageVAR]{%
+  \ifthenelse{\equal{#1}{\cvcurrentlanguageVAR}}%
+  {\DEFsubsubsection{#2}}{}%
+}
+
+\newcommand{\only}[2][\cvcurrentlanguageVAR]{%
+  \ifthenelse{\equal{#1}{\cvcurrentlanguageVAR}}%
+  {#2}{}%
+}
+
+\let\DEFbusinessOrSector\businessOrSector
+\renewcommand{\businessOrSector}[2][\cvcurrentlanguageVAR]{%
+  \ifthenelse{\equal{#1}{\cvcurrentlanguageVAR}}%
+  {\DEFbusinessOrSector{#2}}{}%
+}
+
+
+\RequirePackage{verbatim} % \comment and \endcomment command
+
+\NewDocumentEnvironment{education}{O{\cvcurrentlanguageVAR} m m}
+{%
+  \ifthenelse{\equal{#1}{\cvcurrentlanguageVAR}}%
+  {\begin{cveducation}{#2}{#3}}{\comment}
+}
+{%
+  \ifthenelse{\equal{#1}{\cvcurrentlanguageVAR}}%
+  {\end{cveducation}}{\endcomment}%
+}
+
+\NewDocumentEnvironment{occupation}{O{\cvcurrentlanguageVAR} m}
+{%
+  \ifthenelse{\equal{#1}{\cvcurrentlanguageVAR}}%
+  {\begin{cvoccupation}{#2}}{\comment}
+}
+{%
+  \ifthenelse{\equal{#1}{\cvcurrentlanguageVAR}}%
+  {\end{cvoccupation}}{\endcomment}%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% date formatting %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\RequirePackage[\cvfullLanguageVAR]{isodate}
+\newcommand{\printd}[1]{%
+\ifnum\pdfstrcmp{#1}{}=\z@\expandafter\@firstoftwo\else\expandafter\@secondoftwo\fi
+  {\cvCurrentDate}{\texorpdfstring{\printdate{#1}}{}}% \texorpdfstring workaround for hyperref
+}
 
