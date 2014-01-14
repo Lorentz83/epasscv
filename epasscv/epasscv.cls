@@ -73,6 +73,8 @@
 %%%%%%%%%%%%%%%%%%%%% Support vars and commands %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\newcommand{\email}[1]{\href{mailto:#1}{\nolinkurl{#1}}}
+
 \newcommand{\cvoptional}[3]{%
   \ifthenelse{\equal{#1}{}}{}{#2#1#3}
 }
@@ -170,7 +172,7 @@
 \newcommand{\cvwork}[1]{\mbox{\cvphoneworkicon~\texttt{#1}}}
 \newcommand{\cvfax}[1]{\mbox{\cvphonefaxicon~\texttt{#1}}}
 
-\newcommand{\cvemail}[1]{\cvemailicon~\url{#1}}
+\newcommand{\cvemail}[1]{\cvemailicon~\email{#1}}
 
 \newenvironment{cvinstantmessages}{\par}{\par}
 \newcommand{\cvexpandimicon}[1]{%
