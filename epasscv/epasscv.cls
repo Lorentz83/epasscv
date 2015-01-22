@@ -16,6 +16,9 @@
   \PassOptionsToClass{\CurrentOption}{article}
 }
 
+
+\setcounter{tocdepth}{2}
+
 %% l18n options
 
 \newcommand{\cvfullLanguageVAR}{}
@@ -196,6 +199,7 @@
 \cvexpandwebicon{cvwebsite}
 \cvexpandwebicon{cvwordpress}
 
+\newcommand{\cvcitizenship}[1]{\cvcitizenshipT: #1}
 \newcommand{\cvnationality}[1]{\cvnationalityT: #1}
 \newcommand{\cvdateofbirth}[1]{\cvdateofbirthT: \printd{#1}}
 \newcommand{\cvgender}[1]{\cvgenderT:  #1}
