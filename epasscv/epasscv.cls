@@ -198,6 +198,7 @@
 \cvexpandwebicon{cvtwitter}
 \cvexpandwebicon{cvwebsite}
 \cvexpandwebicon{cvwordpress}
+\cvexpandwebicon{cvgithub}
 
 \newcommand{\cvcitizenship}[1]{\cvcitizenshipT: #1}
 \newcommand{\cvnationality}[1]{\cvnationalityT: #1}
